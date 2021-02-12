@@ -1,59 +1,43 @@
-
-// var gDebugMode = true;
-
-// let futuraBook;
-
-var img;
+let logo;
 
 function preload(){
-  // futuraBook = loadFont("assets/futuraBook.ttf")
-  img = loadImage("assets/blueLogo.png");
+  logo = loadImage("assets/blueLogo.png");
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  imageMode(CENTER);
-  
-  // textAlign(CENTER);
-
+    imageMode(CENTER);
+    frameRate(1);
+    textSize(24);
+    textAlign(CENTER);  
  }
-
 
 // Draw code goes here
 function draw() {
-   background(100,100,100);
+  background(255);
+   text(frameCount, 90, 90);  //printing framerate to screen
 
-   image(img, width/2, height/2);
-
-
-
-
-   // textSize(100);
-   // fill(0,0,255);
-   // textFont(futuraBook);
-   // text("JOSHUA", width/2, height/2-100);
-   // text("WILDER", width/2, height/2);
-   // text("OAKLEY", width/2, height/2+100);
-
-
- // if( gDebugMode == true){
- //    drawDebugInfo();
- // }
+   drawLogo();
 }
 
+function drawLogo(){
+   
+	let y = 500;
+
+	translate(width/2, height/2);
+    
+    for( let i = 0; i < y; i ++) {
+      image(logo, 0, 0, logo.width / i, logo.height / i);
+  }   
+ }
 
 
-// function drawDebugInfo(){
-//   fill(255);
-//   textSize(12);
-//   text("x: " + mouseX + " y:" + mouseY, 20, height - 20);
 
-// } 
-// function keyTyped() {
-//   if (key === ' ') {
-//     gDebugMode = !gDebugMode;
-//   }
-// }
+
+
+
+
+
 
 
 
