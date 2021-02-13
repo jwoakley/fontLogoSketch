@@ -1,11 +1,19 @@
 let logo;
 
+// var numColumns = 20;
+// var numRows = 14;
+
+
+//make a global variable for width and height as x and y so that
+//we can change it once and not have to hunt through the code for all instances
+
 // Rotation
 var r = 0;
 var rotIncrement = 1;
 
+
 // Scaling of image
-var div = .95;
+var div = 1;
 var divIncrement = .15;
 var maxDiv = 20;
 var minDiv = 1.0;
@@ -29,22 +37,24 @@ function draw() {
   doRotation();
   drawLogo();
   changeScale();
-
 }
 
+
+
 function drawLogo(){
-  image(logo, width/2, height/2, logoSize / div, logoSize / div); 
- }
+
+  image(logo, width/3, height/3, logoSize / div, logoSize / div); 
+}
 
 
 function doRotation() {
   // move to origin and perform the translation
-  translate(width/2, height/2);
+  translate(width/3, height/3);
   r = r + rotIncrement;
   rotate(r)
 
   // move to original spot
-  translate(-width/2, -height/2);
+  translate(-width/3, -height/3);
 }
 
 function changeScale() {
